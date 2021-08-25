@@ -1,0 +1,401 @@
+
+
+#Modal_Message_Prompt_annexes .Header .Title, #Modal_Message_Prompt .Header .Title {
+	width: calc(100% - 200px);
+}
+
+#Modal_Message_Prompt_annexes .Header .Btn-group, #Modal_Message_Prompt .Header .Btn-group {
+	width: 200px;
+}
+
+#Modal_Message_Prompt_annexes .btn-mkk, #Modal_Message_Prompt .btn-mkk{
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    font-weight: 500 !important;
+    box-shadow: 0px 0px 4px 0px rgb(0 0 0 / 30%);
+}
+
+#Modal_Message_Prompt_annexes .btn-mkk.btn-send, #Modal_Message_Prompt .btn-mkk.btn-send{
+	color: white;
+	font-size: .9rem;
+	margin-right: 10px;
+	background: #ff9200;
+	padding: 5px 20px !important;
+}
+
+
+
+
+#Modal_Message_Prompt_annexes .Body {
+	padding: 0px 15px;
+}
+
+.Modal_Message_Prompt_annexes--item {
+    margin: 25px 0px;
+    padding: 10px 15px;
+    box-shadow: 2px 2px 10px -1px rgb(0 0 0 / 30%);
+}
+
+.Modal_Message_Prompt_annexes--item--title {
+	margin: 10px 0px;
+	display: flex;
+}
+
+.Modal_Message_Prompt_annexes--item--title--index {
+	flex: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-weight: 600 !important;
+}
+
+.Modal_Message_Prompt_annexes--item--title--input {
+	flex: auto;
+	width: unset;
+}
+
+.Modal_Message_Prompt_annexes--item--controllers {
+	justify-content: flex-end;
+	align-items: center;
+	display: flex;
+}
+
+.Modal_Message_Prompt_annexes--item--btn{
+	color: #748591 !important;
+	margin-right: 15px;
+	--size: 35px;
+	width: var(--size);
+	height: var(--size);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	/*box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);*/
+	cursor: pointer;
+	text-decoration: none;
+    background-color: rgb(0 0 0 / 10%);
+    color: rgba(0, 0, 0, .7) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	-------------------------------------------------------------------------------------------------------------------
+	Loader de metroKUBIKO
+	-------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+		/*
+			-------------------------------------------------------------------------------------------------------------------
+			Basico ( PreLoader.init(' ') )
+			-------------------------------------------------------------------------------------------------------------------
+		*/
+
+
+
+			#loader_metrokubiko {
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				display: flex;
+				z-index: 200;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				color: white;
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+				background-color: rgba(0, 0, 0, .7);
+			}
+
+			.loader_metrokubiko__container {
+				width: min(100%, 700px);
+				height: auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			.loader_metrokubiko__container img {
+				width: 35px;
+			}
+
+
+			.loader_metrokubiko__img_loader {
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				display: flex;
+				height: var(--side);
+				width: var(--side);
+				--side: 70px;
+				border-radius: 50%;
+				background: #002b45;
+			}
+
+			.loader_metrokubiko__text {
+				margin: 20px 0px 40px;
+				text-align: center;
+			}
+
+
+			.loader_metrokubiko__img_loader div {
+				box-sizing: border-box;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: var(--side);
+				height: var(--side);
+				border: 4px solid;
+				border-radius: 50%;
+				animation: loader_metrokubiko__div 1.5s infinite;
+				border-color: #cd900c transparent transparent transparent;
+			}
+
+			.loader_metrokubiko__img_loader div:nth-child(2) {
+				animation-delay: -0.1s;
+			}
+
+			.loader_metrokubiko__img_loader div:nth-child(3) {
+				animation-delay: -0.2s;
+			}
+
+
+			@keyframes loader_metrokubiko__div {
+				0% {
+					transform: rotate( 0deg );
+				}
+				100% {
+					transform: rotate( 360deg );
+				}
+			}
+
+		/*
+			-------------------------------------------------------------------------------------------------------------------
+			Finaliza
+			-------------------------------------------------------------------------------------------------------------------
+		*/
+
+
+
+
+
+
+
+		/*
+			-------------------------------------------------------------------------------------------------------------------
+			ProgressBar ( PreLoader.init({ type: 'progressbar', text: '' }) )
+			-------------------------------------------------------------------------------------------------------------------
+		*/
+
+
+			#loader_metrokubiko__progressbar {
+				justify-content: center;
+				align-items: center;
+				position: fixed;
+				display: flex;
+				z-index: 200;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				color: white;
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+				background-color: rgba(0, 0, 0, .9);
+				font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+			}
+
+			.loader_metrokubiko__progressbar--container {
+				justify-content: center;
+				flex-direction: column;
+				align-items: center;
+				display: flex;
+				height: auto;
+				width: min(90%, 600px);
+			}
+
+			.loader_metrokubiko__progressbar--image {
+				justify-content: center;
+				align-items: center;
+				height: var(--side);
+				width: var(--side);
+				position: relative;
+				display: flex;
+				--side: 60px;
+				border-radius: 50%;
+				margin-bottom: 20px;
+				background: #002b45;
+				border: 1px solid #cd900c;
+			}
+
+			.loader_metrokubiko__progressbar--image img {
+				width: 30px;
+			}
+
+			.loader_metrokubiko__progressbar--text {
+				text-align: center;
+				margin-bottom: 20px;
+			}
+
+			.loader_metrokubiko__progressbar--bar {
+				overflow: hidden;
+				width: 100%;
+				height: 5px;
+				margin-bottom: 40px;
+				background-color: rgb(255 255 255 / 0.15);
+			}
+
+			.loader_metrokubiko__progressbar--bar_value {
+				width: 0%;
+				height: 100%;
+				transition: width 1s;
+				background-color: #cd900c;
+			}
+
+		/*
+			-------------------------------------------------------------------------------------------------------------------
+			Finaliza
+			-------------------------------------------------------------------------------------------------------------------
+		*/
+
+
+/*
+	-------------------------------------------------------------------------------------------------------------------
+	Finaliza
+	-------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	-------------------------------------------------------------------------------------------------------------------
+	Estilos del controlador para crear un nuevo ticket de soporte ( GlobalThings.newSupportTicket )
+	-------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+	#NewSupportTicket--Modal .Body {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+	}
+
+	.NewSupportTicket--Modal--cell {
+		padding: 10px 15px;
+	}
+
+	.NewSupportTicket--Modal--cell__subject {
+		grid-column: span 2;
+	}
+
+
+
+
+
+/*
+	-------------------------------------------------------------------------------------------------------------------
+	Finaliza
+	-------------------------------------------------------------------------------------------------------------------
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	-------------------------------------------------------------------------------------------------------------------
+	Estilos del controlador de rutas ( Single Page App ) ( GlobalThings.pathController )
+	-------------------------------------------------------------------------------------------------------------------
+*/
+
+
+	.pathController--frame{
+		position: absolute;
+		overflow: auto;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+	}
+
+
+
+/*
+	-------------------------------------------------------------------------------------------------------------------
+	Finaliza
+	-------------------------------------------------------------------------------------------------------------------
+*/
