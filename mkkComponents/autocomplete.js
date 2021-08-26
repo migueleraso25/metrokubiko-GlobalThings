@@ -25,7 +25,6 @@ const AutoComplete = function ({ element, items }) {
 		liElement.innerHTML = text;
 		liElement.style.display = 'none';
 		liElement.onclick = () => {
-			console.log(text);
 			element.value = text;
 		}
 
@@ -61,7 +60,6 @@ const AutoComplete = function ({ element, items }) {
 			ulElement.style.display = 'none';
 		}
 
-		console.log(result);
 	});
 
 	element.addEventListener('focusout', e => {

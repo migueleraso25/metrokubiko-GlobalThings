@@ -141,8 +141,6 @@ const AnnexesController = function() {
 		const { modalSettings, srcStorage } = setArgs(args);
 		const Modal = new Components.Modal(modalSettings);
 
-		console.log()
-
 		annexesSrc = srcStorage;
 
 		Modal.create();

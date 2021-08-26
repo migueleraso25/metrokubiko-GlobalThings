@@ -39,7 +39,6 @@ const newSupportTicket = async ({ currentUser }) => {
 	return new Promise(resolve => {
 
 		Modal.onClose = () => {
-			console.log(data)
 			resolve(data.result);
 		};
 	});
