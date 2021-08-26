@@ -5,6 +5,7 @@ import _Prompt from './prompt.js';
 import _Toast from './toast.js';
 import _ContextMenu from './contextmenu.js';
 import _Button from './button.js';
+import _AutoComplete from './autocomplete.js';
 
 export const Modal = {
 	create : createModal,
@@ -19,7 +20,7 @@ export const Prompt = _Prompt;
 export const Toast = _Toast;
 export const ContextMenu = _ContextMenu;
 export const Button = _Button;
-
+export const AutoComplete = _AutoComplete;
 
 export default {
 	Modal,
@@ -29,4 +30,5 @@ export default {
 	Toast,
 	Button,
 	ContextMenu,
+	AutoComplete,
 }

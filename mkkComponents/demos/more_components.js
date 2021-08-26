@@ -150,5 +150,54 @@ code_examples.push({
 	`
 });
 
+code_examples.push({
+	id : 'autocomplete',
+	title : 'AutoComplete',
+	description : '',
+	code : `
+	const modal = es.Modal.create({
+		id : 'autocomplete',
+		type: 'small',
+		template : ${'`'}
+			<div class="components_modal--header">
+				<div class="components_modal--header--title"> AutoComplete </div>
+				<div class="components_modal--header--buttons">
+					<span class="btn-mkk btn_mkk_square fas fa-times" onclick="es.Modal.closeByID('autocomplete');"> </span>
+				</div>
+			</div>
+			<div class="components_modal--body" style="display: flex; justify-content: center; align-items: center; height: 100px;">
+				<input class="Input-mkk"/>
+			</div>
+		${'`'}
+	})
+
+	const autocomplete = es.AutoComplete({
+		items : [ 'hola', 'mundo', 'hola mundo' ],
+		element : modal.element.querySelector('input')
+	});
+
+	// const buttonElement = modal.element.querySelector('.components_modal--body button');
+	// const { setState, getState } = es.Button({ element : buttonElement });
+
+	// buttonElement.onclick = () => {
+
+	// 	if (getState() !== 'loading') {
+	// 		setState('loading');
+	// 		return;
+	// 	};
+
+	// 	const stateElement = setState('custom_state');
+
+	// 	stateElement.innerHTML = 'Custom State';
+
+	// 	setTimeout(function() {
+	// 		setState('initial');
+	// 	}, 3000);
+	// }
+
+	modal.open();
+	`
+});
+
 
 
