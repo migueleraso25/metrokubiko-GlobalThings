@@ -3,6 +3,7 @@ import { AlertCoreComponent } from './alert.js';
 export const Prompt = function (args) {
 
 	const {
+		id,
 		data,
 		title,
 		inputs,
@@ -16,6 +17,7 @@ export const Prompt = function (args) {
 	const { acceptButton, cancelButton, destroy, element } = AlertCoreComponent({ data, content, accept, cancel : cancel || 'Cancel' });
 
 	element.className += ' components_prompt';
+	element.id = id || '';
 
 	return new Promise((resolve) => {
 
