@@ -8,6 +8,7 @@ export const Prompt = function (args) {
 		inputs,
 		accept,
 		cancel,
+		onAccept,
 	} = args;
 
 
@@ -30,7 +31,18 @@ export const Prompt = function (args) {
 			resolve(inputs_values);
 		}
 
-		acceptButton.onclick = () => close(true);
+		acceptButton.onclick = () => {
+
+			if (typeof onAccept !== 'function') {
+				return close(true);
+			}
+
+			const inputs = element.querySelectorAll('input');
+
+			if (!onAccept(Array.from(inputs))) return;
+
+			close(true);
+		}
 		cancelButton.onclick = () => close(false);
 	});
 };
@@ -65,5 +77,21 @@ const getContent = ({ title, inputs }) => {
 
 }
 
+
+Prompt.getSettingsExample = () => {
+
+	return {
+		title : 'Example',
+		accept : 'Change',
+		cancel : 'Cancel',
+		inputs : [{ label: 'Name:' }],
+		onAccept : (inputs) => {
+
+			if (inputs[0].value > 100) return false;
+
+			return true;
+		}
+	}
+}
 
 export default Prompt;
