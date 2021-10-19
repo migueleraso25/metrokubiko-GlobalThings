@@ -45,6 +45,7 @@ export const Prompt = function (args) {
 
 			close(true);
 		}
+
 		cancelButton.onclick = () => close(false);
 	});
 };

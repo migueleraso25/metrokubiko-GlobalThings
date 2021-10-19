@@ -9,6 +9,7 @@
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
+  "repository": "https://github.com/migueleraso25/metrokubiko-GlobalThings.git",
   "author": "",
   "license": "ISC",
   "devDependencies": {
