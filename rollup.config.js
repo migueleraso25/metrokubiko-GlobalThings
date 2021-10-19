@@ -31,13 +31,11 @@ export default [
 					comments: false
 				}
 			}),
-			// serve(),
-			// livereload(),
-			serve(),
-			livereload(),
+			!production && serve(),
+			!production && livereload(),
 		],
 		watch : {
-			clearScreen : true,
+			clearScreen : false,
 		},
 	},
 	// {
@@ -52,28 +50,3 @@ export default [
 	// 	watch,
 	// }
 ];
-
-
-// livereload({
-// 	watch: '',
-// 	// verbose: false, // Disable console output
-// 	port: 5000,
-// })
-
-
-
-// function serve() {
-// 	let started = false;
-// 	return {
-// 		writeBundle() {
-// 			if (!started) {
-// 				started = true;
-
-// 				require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-// 					stdio: ['ignore', 'inherit', 'inherit'],
-// 					shell: true
-// 				});
-// 			}
-// 		}
-// 	};
-// }
