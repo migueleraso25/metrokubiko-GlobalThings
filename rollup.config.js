@@ -38,15 +38,15 @@ export default [
 			clearScreen : false,
 		},
 	},
-	// {
-	// 	input: './main.js',
-	// 	output: {
-	// 		sourcemap: false,
-	// 		format: 'iife',
-	// 		name: 'GlobalThings',
-	// 		file: './min.js'
-	// 	},
-	// 	plugins,
-	// 	watch,
-	// }
+	{
+		input: './main.js',
+		output: {
+			sourcemap: false,
+			format: 'iife',
+			name: 'GlobalThings',
+			file: './min.js'
+		},
+		plugins,
+		watch,
+	}
 ];
