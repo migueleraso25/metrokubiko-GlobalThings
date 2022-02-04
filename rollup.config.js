@@ -1,19 +1,11 @@
-import { uglify } from "rollup-plugin-uglify";
-import serve from 'rollup-plugin-serve';
-import livereload from 'rollup-plugin-livereload';
+import { terser } from 'rollup-plugin-terser'
+import commonjs from '@rollup/plugin-commonjs'
+import livereload from 'rollup-plugin-livereload'
+import resolve from '@rollup/plugin-node-resolve'
 
-const production = !process.env.ROLLUP_WATCH;
-
-const watch = {
-	clearScreen: false
-};
-
+const production = !process.env.ROLLUP_WATCH
 const plugins = [
-	uglify({
-		output: {
-			comments: false
-		}
-	})
+	terser()
 ]
 
 export default [
@@ -25,28 +17,43 @@ export default [
 			name: 'es',
 			file: './mkkComponents/min.js'
 		},
-		plugins : [
-			uglify({
-				output: {
-					comments: false
-				}
-			}),
-			!production && serve(),
-			!production && livereload(),
-		],
-		watch : {
-			clearScreen : false,
-		},
+		plugins,
 	},
 	{
 		input: './main.js',
 		output: {
-			sourcemap: false,
+			sourcemap: !production,
 			format: 'iife',
 			name: 'GlobalThings',
 			file: './min.js'
 		},
-		plugins,
-		watch,
+		plugins : [
+			resolve({ browser: true }),
+			!production && livereload('mkkComponents'),
+			!production && serve(),
+			commonjs(),
+			terser(),
+		],
+		watch: {
+			clearScreen: false
+		}
 	}
-];
+]
+
+function serve() {
+
+	let started = false
+
+	return {
+		writeBundle() {
+			if (!started) {
+				started = true;
+
+				require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
+					stdio: ['ignore', 'inherit', 'inherit'],
+					shell: true
+				});
+			}
+		}
+	};
+}
